@@ -1,0 +1,145 @@
+:root {
+  --bg: #f4f6f8;
+  --card-bg: #ffffff;
+  --primary: #2f6fed;
+  --primary-dark: #1e4fbf;
+  --text: #1c2430;
+  --muted: #647084;
+  --border: #e1e5eb;
+  --approved: #1f8a4c;
+  --rejected: #c0392b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 640px;
+  width: 100%;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 1.5rem;
+}
+
+.subtitle {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.notice {
+  background: #fff8e1;
+  border: 1px solid #f0e0a0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  color: #6b5a10;
+  margin-bottom: 20px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+input, select {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #fff;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+button {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+  padding: 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover { background: var(--primary-dark); }
+
+.result {
+  margin-top: 20px;
+}
+
+.result-box {
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 1rem;
+}
+
+.result-box.approved {
+  background: #e8f7ee;
+  border: 1px solid var(--approved);
+  color: var(--approved);
+}
+
+.result-box.rejected {
+  background: #fbeceb;
+  border: 1px solid var(--rejected);
+  color: var(--rejected);
+}
+
+.result-box.error {
+  background: #fbeceb;
+  border: 1px solid var(--rejected);
+  color: var(--rejected);
+}
+
+.result-box .prob {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.result-box .warn {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: #8a6d1a;
+}
+
+@media (max-width: 520px) {
+  form { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Credit Approval Predictor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Credit Card Approval Predictor</h1>
+    <p class="subtitle">Powered by the Logistic Regression model you trained in Colab.</p>
+
+    <p class="notice">
+      <strong>Note:</strong> the original dataset anonymized its field names to protect
+      applicant privacy. The labels below use a commonly-referenced unofficial guess at
+      what each field represents &mdash; not confirmed by the dataset's source.
+    </p>
+
+    <form id="predict-form">
+
+      <div class="field">
+        <label for="f0">A1 &ndash; Gender code</label>
+        <select id="f0" required>
+          <option value="a">a</option>
+          <option value="b">b</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f1">A2 &ndash; Age</label>
+        <input type="number" step="0.01" id="f1" placeholder="e.g. 30.83" required>
+      </div>
+
+      <div class="field">
+        <label for="f2">A3 &ndash; Debt</label>
+        <input type="number" step="0.01" id="f2" placeholder="e.g. 2.50" required>
+      </div>
+
+      <div class="field">
+        <label for="f3">A4 &ndash; Marital status code</label>
+        <select id="f3" required>
+          <option value="u">u</option>
+          <option value="y">y</option>
+          <option value="l">l</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f4">A5 &ndash; Bank customer code</label>
+        <select id="f4" required>
+          <option value="g">g</option>
+          <option value="p">p</option>
+          <option value="gg">gg</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f5">A6 &ndash; Education level code</label>
+        <select id="f5" required></select>
+      </div>
+
+      <div class="field">
+        <label for="f6">A7 &ndash; Ethnicity code</label>
+        <select id="f6" required></select>
+      </div>
+
+      <div class="field">
+        <label for="f7">A8 &ndash; Years employed</label>
+        <input type="number" step="0.01" id="f7" placeholder="e.g. 1.25" required>
+      </div>
+
+      <div class="field">
+        <label for="f8">A9 &ndash; Prior default</label>
+        <select id="f8" required>
+          <option value="t">t (yes)</option>
+          <option value="f">f (no)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f9">A10 &ndash; Currently employed</label>
+        <select id="f9" required>
+          <option value="t">t (yes)</option>
+          <option value="f">f (no)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f10">A11 &ndash; Credit score</label>
+        <input type="number" step="1" id="f10" placeholder="e.g. 1" required>
+      </div>
+
+      <div class="field">
+        <label for="f11">A12 &ndash; Drivers license</label>
+        <select id="f11" required>
+          <option value="t">t (yes)</option>
+          <option value="f">f (no)</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f12">A13 &ndash; Citizen code</label>
+        <select id="f12" required>
+          <option value="g">g</option>
+          <option value="p">p</option>
+          <option value="s">s</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f13">A14 &ndash; Zip code (5 digits, e.g. 00100)</label>
+        <input type="text" id="f13" placeholder="e.g. 00100" required>
+      </div>
+
+      <div class="field">
+        <label for="f14">A15 &ndash; Income</label>
+        <input type="number" step="1" id="f14" placeholder="e.g. 0" required>
+      </div>
+
+      <button type="submit">Predict Approval</button>
+    </form>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
